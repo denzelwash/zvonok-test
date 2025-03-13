@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h1>404</h1>
-    <RouterLink to="/">На глвавную</RouterLink>
+  <div class="container">
+    <div>
+      <h1>404</h1>
+      <RouterLink to="/">На глвавную</RouterLink>
+    </div>
   </div>
 </template>
 

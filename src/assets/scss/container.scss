@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
+  @media (max-width: $xxl) {
+    max-width: 1200px;
+  }
+  @media (max-width: $xl) {
+    max-width: 990px;
+  }
+  @media (max-width: $lg) {
+    max-width: 790px;
+  }
+  @media (max-width: $md) {
+    max-width: 576px;
+  }
+  @media (max-width: $sm) {
+    max-width: 100%;
+  }
+}
