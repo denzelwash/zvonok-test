@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <h1>Index</h1>
+    <h1>На неделю</h1>
+    <RouterLink to="/">На главную</RouterLink>
   </div>
 </template>
 

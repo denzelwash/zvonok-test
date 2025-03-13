@@ -1,21 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import IndexView from '../views/IndexView.vue'
-import NotFoundView from '@/views/NotFoundView.vue'
+import { routes, handleHotUpdate } from 'vue-router/auto-routes'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'index',
-      component: IndexView,
-    },
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'NotFound',
-      component: NotFoundView,
-    },
-  ],
+export const router = createRouter({
+  history: createWebHistory(),
+  routes,
 })
+
+if (import.meta.hot) {
+  handleHotUpdate(router)
+}
 
 export default router
