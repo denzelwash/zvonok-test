@@ -1,3 +1,5 @@
+@use './vars.scss' as *;
+
 body {
   min-width: 320px;
   color: $color-text;
