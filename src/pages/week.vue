@@ -1,8 +1,9 @@
 <template>
   <div class="container">
-    <h1>На неделю</h1>
-    <RouterLink to="/">На главную</RouterLink>
+    <PageHeader />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import PageHeader from '@/components/PageHeader.vue'
+</script>
