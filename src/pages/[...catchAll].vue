@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <div>
-      <h1>404</h1>
-      <RouterLink to="/">На глвавную</RouterLink>
+    <div class="page-wrapper">
+      <div>
+        <h1>404</h1>
+        <RouterLink to="/">На глвавную</RouterLink>
+      </div>
     </div>
   </div>
 </template>

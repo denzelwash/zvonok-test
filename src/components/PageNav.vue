@@ -21,6 +21,9 @@
     &:not(.router-link-active) {
       color: #ffffff66;
     }
+    &.router-link-active {
+      cursor: default;
+    }
   }
 }
 </style>
