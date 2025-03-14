@@ -2,7 +2,7 @@
   <div class="popular">
     <div class="popular-title">
       <h2 class="popular-title__text">Погода в популярных городах</h2>
-      <div class="popular-title__tip">
+      <div class="popular-title__tip" v-tippy="{ content: 'Какой-то текст c подсказкой...' }">
         <img src="@/assets/icons/icn_question.svg" alt="" width="18" height="18" />
       </div>
     </div>
@@ -40,7 +40,6 @@ import CardPopular from './Cards/CardPopular.vue'
     justify-content: center;
     background: #e9e9f31a;
     border-radius: 50%;
-    cursor: pointer;
     flex-shrink: 0;
     @media (max-width: $md) {
       width: 24px;
