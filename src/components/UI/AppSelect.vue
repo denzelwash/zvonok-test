@@ -38,15 +38,33 @@ const city = ref('Canada')
   --vs-dropdown-option--active-color: #fff;
   --vs-transition-duration: 0;
   min-width: 246px;
+  @media (max-width: $md) {
+    font-size: 14px;
+  }
+  @media (max-width: $sm) {
+    min-width: unset;
+    width: 100%;
+  }
   .vs__dropdown-toggle {
     background-color: #e9e9f31a;
     height: 46px;
     padding: 0;
     border-radius: 8px !important;
-    + ul {
-      border-radius: 8px !important;
-      top: calc(100% + 12px);
-      padding: 0;
+    @media (max-width: $md) {
+      height: 36px;
+    }
+  }
+  .vs__dropdown-menu {
+    border-radius: 8px !important;
+    top: calc(100% + 12px);
+    padding: 0;
+    background: #1a669c;
+
+    .vs__dropdown-option {
+      background-color: #e9e9f31a;
+      &--highlight {
+        background: #e9e9f333;
+      }
     }
   }
   .vs__selected {
@@ -55,6 +73,9 @@ const city = ref('Canada')
   &.vs--open {
     .vs__selected {
       top: 11px;
+      @media (max-width: $md) {
+        top: 8px;
+      }
     }
   }
   .vs__open-indicator {

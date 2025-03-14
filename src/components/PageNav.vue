@@ -12,9 +12,19 @@
   display: inline-flex;
   background-color: #e9e9f31a;
   border-radius: 8px;
+  @media (max-width: $sm) {
+    display: flex;
+    width: 100%;
+  }
   a {
     font-size: 22px;
     padding: 10px 16px;
+    @media (max-width: $md) {
+      font-size: 14px;
+    }
+    @media (max-width: $sm) {
+      flex-grow: 1;
+    }
     &:not(:last-child) {
       border-right: 1px solid #e9e9f333;
     }

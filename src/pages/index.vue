@@ -36,6 +36,13 @@ import PagePopular from '@/components/PagePopular.vue'
   grid-template-columns: 1fr 645px;
   margin-bottom: 56px;
   align-items: start;
+  @media (max-width: $xxl) {
+    grid-template-columns: 50% 50%;
+  }
+  @media (max-width: $lg) {
+    grid-template-columns: 100%;
+    gap: 32px;
+  }
 }
 .timeline {
   padding: 0;

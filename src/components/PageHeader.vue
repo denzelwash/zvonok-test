@@ -17,5 +17,9 @@ import AppSelect from './UI/AppSelect.vue'
   align-items: start;
   gap: 32px;
   margin-bottom: 56px;
+  @media (max-width: $sm) {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
 </style>

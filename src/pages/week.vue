@@ -26,8 +26,8 @@ import PagePopular from '@/components/PagePopular.vue'
 
 <style lang="scss" scoped>
 .grid {
-  display: grid;
-  grid-template-columns: repeat(7, 122px);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 56px;
 }

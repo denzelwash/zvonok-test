@@ -21,26 +21,55 @@
   background: radial-gradient(134.39% 134.39% at -17.89% -22.86%, rgba(255, 255, 255, 0.2) 0%, rgba(238, 237, 237, 0.1) 100%);
   text-align: center;
   cursor: pointer;
+  flex-grow: 1;
+  @media (max-width: $lg) {
+    padding: 16px;
+  }
+  @media (max-width: $sm) {
+    padding: 16px 12px;
+  }
   &__city {
     font-size: 26px;
     font-weight: 500;
-    margin-bottom: 8px;
+    margin-bottom: auto;
+    @media (max-width: $lg) {
+      font-size: 20px;
+    }
+    @media (max-width: $sm) {
+      font-size: 16px;
+    }
   }
   &__desc {
-    margin-bottom: 16px;
+    margin: 8px 0 16px;
+    @media (max-width: $sm) {
+      font-size: 14px;
+    }
   }
   &__icon {
     margin-bottom: 16px;
+    @media (max-width: $sm) {
+      width: 40px;
+      height: 40px;
+    }
   }
   &__temp {
     font-size: 48px;
     font-weight: 600;
     line-height: 1.3;
     margin-bottom: 16px;
+    @media (max-width: $lg) {
+      font-size: 32px;
+    }
+    @media (max-width: $sm) {
+      font-size: 24px;
+    }
   }
   &__humidity {
     font-weight: 500;
     margin-bottom: 0;
+    @media (max-width: $sm) {
+      font-size: 14px;
+    }
   }
 }
 </style>

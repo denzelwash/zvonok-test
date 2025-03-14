@@ -10,16 +10,32 @@
 
 <style lang="scss" scoped>
 .card-day {
+  width: 122px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 8px;
+  @media (max-width: $sm) {
+    width: unset;
+    flex-grow: 1;
+  }
   &__title {
     margin-bottom: 0;
+    @media (max-width: $xl) {
+      font-size: 16px;
+    }
   }
-  &___temp {
+  &__icon {
+    @media (max-width: $sm) {
+      width: 40px;
+    }
+  }
+  &__temp {
     margin-bottom: 0;
+    @media (max-width: $xl) {
+      font-size: 16px;
+    }
   }
 }
 </style>

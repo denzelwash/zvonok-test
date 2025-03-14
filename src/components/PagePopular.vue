@@ -41,11 +41,29 @@ import CardPopular from './Cards/CardPopular.vue'
     background: #e9e9f31a;
     border-radius: 50%;
     cursor: pointer;
+    flex-shrink: 0;
+    @media (max-width: $md) {
+      width: 24px;
+      height: 24px;
+    }
+    img {
+      @media (max-width: $md) {
+        width: 14px;
+        height: 14px;
+      }
+    }
   }
 }
 .popular-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 36px;
+  @media (max-width: $xxl) {
+    gap: 16px;
+  }
+  @media (max-width: $md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 </style>

@@ -12,12 +12,21 @@
   margin-bottom: 48px;
   &__title {
     margin-bottom: 12px;
+    @media (max-width: $sm) {
+      margin-bottom: 4px;
+    }
   }
   &__date {
     font-size: 30px;
     font-weight: 500;
     color: #e9e9f399;
     margin-bottom: 0;
+    @media (max-width: $md) {
+      font-size: 20px;
+    }
+    @media (max-width: $sm) {
+      font-size: 16px;
+    }
   }
 }
 </style>

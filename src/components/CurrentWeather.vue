@@ -17,10 +17,30 @@
   display: flex;
   align-items: center;
   gap: 44px;
+  @media (max-width: $xxl) {
+    gap: 20px;
+  }
+  @media (max-width: $sm) {
+    gap: 16px;
+  }
+  &__icon {
+    @media (max-width: $xxl) {
+      width: 120px;
+    }
+    @media (max-width: $sm) {
+      width: 60px;
+    }
+  }
   &__temp {
-    font-size: 110px;
+    font-size: 100px;
     font-weight: 700;
     line-height: 1.1;
+    @media (max-width: $xxl) {
+      font-size: 80px;
+    }
+    @media (max-width: $sm) {
+      font-size: 32px;
+    }
   }
   &__desc {
     display: flex;
@@ -28,6 +48,13 @@
     gap: 12px;
     font-size: 24px;
     font-weight: 500;
+    @media (max-width: $xxl) {
+      font-size: 18px;
+    }
+    @media (max-width: $sm) {
+      font-size: 16px;
+      gap: 4px;
+    }
     p {
       margin-bottom: 0;
     }
