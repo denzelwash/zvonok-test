@@ -5,6 +5,11 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  params: {
+    appid: import.meta.env.VITE_API_KEY,
+    units: 'metric',
+    lang: 'ru',
+  },
 })
 
 api.interceptors.response.use(
@@ -16,3 +21,5 @@ api.interceptors.response.use(
     return Promise.reject(error)
   },
 )
+
+export default api
