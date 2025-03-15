@@ -1,11 +1,25 @@
 <template>
   <div class="page-info">
-    <h1 class="page-info__title">Погода в городе Казань</h1>
-    <p class="page-info__date">понедельник, 25 августа</p>
+    <h1 class="page-info__title">Погода в городе {{ weatherStore.activeCity }}</h1>
+    <p class="page-info__date">{{ getCurrentDate() }}</p>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useWeatherStore } from '@/stores/weather'
+
+const weatherStore = useWeatherStore()
+
+const getCurrentDate = () => {
+  const date = new Date()
+  const formattedDate = new Intl.DateTimeFormat('ru-RU', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+  }).format(date)
+  return formattedDate
+}
+</script>
 
 <style lang="scss" scoped>
 .page-info {
