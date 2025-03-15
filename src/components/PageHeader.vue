@@ -1,13 +1,26 @@
 <template>
   <header class="page-header">
     <PageNav />
-    <AppSelect />
+    <AppSelect
+      :options="selectOptions"
+      :modelValue="weatherStore.activeCity"
+      @update:modelValue="(value) => weatherStore.setActiveCity(value)"
+    />
   </header>
 </template>
 
 <script setup lang="ts">
 import PageNav from '@/components/PageNav.vue'
 import AppSelect from './UI/AppSelect.vue'
+import { useWeatherStore } from '@/stores/weather'
+import { City } from '@/types/weather'
+import { computed } from 'vue'
+
+const weatherStore = useWeatherStore()
+
+const selectOptions = computed(() => {
+  return Object.values(City).filter((city) => city !== weatherStore.activeCity)
+})
 </script>
 
 <style lang="scss" scoped>

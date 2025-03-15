@@ -1,5 +1,12 @@
 <template>
-  <vSelect v-model="city" :options="['Canada', 'United States', 'Russia']" transition="" :searchable="false" :clearable="false">
+  <vSelect
+    :modelValue="props.modelValue"
+    @update:modelValue="(value) => emit('update:modelValue', value)"
+    :options="props.options"
+    transition=""
+    :searchable="false"
+    :clearable="false"
+  >
     <template #open-indicator>
       <img src="@/assets/icons/icn_arrow_down.svg" width="21" height="20" />
     </template>
@@ -7,11 +14,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css'
 
-const city = ref('Canada')
+const props = defineProps<{
+  modelValue: string
+  options: string[]
+}>()
+const emit = defineEmits(['update:modelValue'])
 </script>
 
 <style lang="scss">
