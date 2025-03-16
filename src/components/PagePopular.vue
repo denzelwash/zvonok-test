@@ -1,23 +1,41 @@
 <template>
-  <div class="popular">
+  <div class="popular" v-if="weatherStore.popularCitiesData.length > 0">
     <div class="popular-title">
       <h2 class="popular-title__text">Погода в популярных городах</h2>
       <div class="popular-title__tip" v-tippy="{ content: 'Какой-то текст c подсказкой...' }">
-        <img src="@/assets/icons/icn_question.svg" alt="" width="18" height="18" />
+        <img src="/icons/icn_question.svg" alt="" width="18" height="18" />
       </div>
     </div>
     <div class="popular-grid">
-      <CardPopular />
-      <CardPopular />
-      <CardPopular />
-      <CardPopular />
-      <CardPopular />
+      <CardPopular
+        v-for="city in weatherStore.popularCitiesData"
+        :key="city.id"
+        :name="city.name"
+        :description="city.weather[0].description"
+        :icon="city.weather[0].icon"
+        :temp="city.main.temp"
+        :humidity="city.main.humidity"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useWeatherStore } from '@/stores/weather'
 import CardPopular from './Cards/CardPopular.vue'
+import { onBeforeMount } from 'vue'
+import { getWeatherForPopular } from '@/services/queries'
+
+const weatherStore = useWeatherStore()
+
+onBeforeMount(async () => {
+  if (weatherStore.popularCitiesData.length === 0) {
+    const data = await getWeatherForPopular()
+    if (data) {
+      weatherStore.setPopularCitiesData(data)
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>
