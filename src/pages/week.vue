@@ -3,32 +3,17 @@
     <div class="page-wrapper">
       <PageHeader />
       <PageInfo />
-      <div class="grid">
-        <CardDay />
-        <CardDay />
-        <CardDay />
-        <CardDay />
-        <CardDay />
-        <CardDay />
-        <CardDay />
-      </div>
+      <WeatherByWeek />
       <PagePopular />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import CardDay from '@/components/Cards/CardDay.vue'
 import PageHeader from '@/components/PageHeader.vue'
 import PageInfo from '@/components/PageInfo.vue'
 import PagePopular from '@/components/PagePopular.vue'
+import WeatherByWeek from '@/components/WeatherByWeek.vue'
 </script>
 
-<style lang="scss" scoped>
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 56px;
-}
-</style>
+<style lang="scss" scoped></style>

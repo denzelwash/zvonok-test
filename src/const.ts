@@ -34,4 +34,6 @@ const TIME_MAP = {
   '21:00': 'Вечер',
 } as const
 
-export { CITIES, POPULAR_CITIES, ICONS_MAP, TIME_MAP }
+const DAYS_OF_WEEK = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'] as const
+
+export { CITIES, POPULAR_CITIES, ICONS_MAP, TIME_MAP, DAYS_OF_WEEK }
