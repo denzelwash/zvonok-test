@@ -8,13 +8,14 @@ import AppLoader from './components/UI/AppLoader.vue'
 import { useCommonStore } from './stores/common'
 import { getCurrentWeather, getWeatherByHours } from '@/services/queries'
 import { useWeatherStore } from '@/stores/weather'
-import { onBeforeMount } from 'vue'
+import { onMounted } from 'vue'
 
 const commonStore = useCommonStore()
 const weatherStore = useWeatherStore()
 
-onBeforeMount(async () => {
+onMounted(async () => {
   if (weatherStore.activeCityData === undefined) {
+    commonStore.setLoader(true)
     const currentWeatherData = await getCurrentWeather(weatherStore.activeCity)
     const weatherByHoursData = await getWeatherByHours(weatherStore.activeCity)
     if (currentWeatherData) {
@@ -23,6 +24,7 @@ onBeforeMount(async () => {
     if (weatherByHoursData) {
       weatherStore.setActiveCityDataByHours(weatherByHoursData)
     }
+    commonStore.setLoader(false)
   }
 })
 </script>
