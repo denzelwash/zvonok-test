@@ -6,7 +6,7 @@
     </p>
     <b class="card-line__temp">34°</b>
     <div class="card-line__icon">
-      <img src="@/assets/icons/icn_cloud.svg" alt="" width="60" height="60" />
+      <img src="/icons/icn_cloud.svg" alt="" width="60" height="60" />
       <span>Солнечно</span>
     </div>
     <span class="card-line__wind">1 м/с</span>

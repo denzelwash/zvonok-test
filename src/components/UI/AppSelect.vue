@@ -8,7 +8,7 @@
     :clearable="false"
   >
     <template #open-indicator>
-      <img src="@/assets/icons/icn_arrow_down.svg" width="21" height="20" />
+      <img src="/icons/icn_arrow_down.svg" width="21" height="20" />
     </template>
   </vSelect>
 </template>

@@ -1,3 +1,5 @@
+import type { ICONS_MAP } from '@/const'
+
 export enum City {
   Kazan = 'Казань',
   Krasnodar = 'Краснодар',
@@ -71,7 +73,7 @@ interface Weather {
   id: number
   main: string
   description: string
-  icon: string
+  icon: Icon
 }
 
 interface Main {
@@ -90,3 +92,5 @@ interface Wind {
   deg: number
   gust: number
 }
+
+export type Icon = keyof typeof ICONS_MAP

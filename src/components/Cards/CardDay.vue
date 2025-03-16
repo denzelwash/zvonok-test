@@ -1,7 +1,7 @@
 <template>
   <div class="card-day">
     <p class="card-day__title">Понедельник</p>
-    <img src="@/assets/icons/icn_cloud.svg" class="card-day__icon" alt="" width="60" height="60" />
+    <img src="/icons/icn_cloud.svg" class="card-day__icon" alt="" width="60" height="60" />
     <p class="card-day__temp">35°</p>
   </div>
 </template>
