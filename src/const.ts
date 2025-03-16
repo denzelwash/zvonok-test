@@ -23,4 +23,15 @@ const ICONS_MAP = {
   '50n': 'icn_cloud',
 } as const
 
-export { CITIES, POPULAR_CITIES, ICONS_MAP }
+const TIME_MAP = {
+  '00:00': 'Ночь',
+  '03:00': 'Ночь',
+  '06:00': 'Утро',
+  '09:00': 'Утро',
+  '12:00': 'День',
+  '15:00': 'День',
+  '18:00': 'Вечер',
+  '21:00': 'Вечер',
+} as const
+
+export { CITIES, POPULAR_CITIES, ICONS_MAP, TIME_MAP }

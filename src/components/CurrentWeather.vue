@@ -1,5 +1,5 @@
 <template>
-  <div class="current-weather" v-if="weatherStore.activeCityData">
+  <div class="current-weather" v-if="weatherStore.activeCityData !== undefined">
     <img src="/icons/icn_cloud.svg" class="current-weather__icon" alt="" width="180" height="180" />
     <b class="current-weather__temp">{{ Math.round(weatherStore.activeCityData.main.temp) }}°</b>
     <div class="current-weather__desc">

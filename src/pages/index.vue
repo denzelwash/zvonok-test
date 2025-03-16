@@ -5,17 +5,7 @@
       <PageInfo />
       <div class="grid">
         <CurrentWeather />
-        <ul class="timeline">
-          <li>
-            <CardLine />
-          </li>
-          <li>
-            <CardLine />
-          </li>
-          <li>
-            <CardLine />
-          </li>
-        </ul>
+        <WeatherByHours />
       </div>
       <PagePopular />
     </div>
@@ -23,11 +13,11 @@
 </template>
 
 <script setup lang="ts">
-import CardLine from '@/components/Cards/CardLine.vue'
 import CurrentWeather from '@/components/CurrentWeather.vue'
 import PageHeader from '@/components/PageHeader.vue'
 import PageInfo from '@/components/PageInfo.vue'
 import PagePopular from '@/components/PagePopular.vue'
+import WeatherByHours from '@/components/WeatherByHours.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -43,10 +33,5 @@ import PagePopular from '@/components/PagePopular.vue'
     grid-template-columns: 100%;
     gap: 32px;
   }
-}
-.timeline {
-  padding: 0;
-  list-style: none;
-  margin: 0;
 }
 </style>
