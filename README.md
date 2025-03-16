@@ -1,6 +1,11 @@
-# zvonok-test
+# Тестовое задание в zvonok 🔔
 
-This template should help get you started developing with Vue 3 in Vite.
+## Как запустить проект?
+
+Необходимо зарегистрироваться на сайте [openweathermap.org](http://openweathermap.org).
+Создать API Key в разделе My API keys.
+Создать в корне файл .env по шаблону .env.example и прописать свой API Key.
+Дальше все как обычно(описано в разделе Project Setup).
 
 ## Recommended IDE Setup
 
