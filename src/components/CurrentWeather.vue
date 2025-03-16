@@ -1,16 +1,20 @@
 <template>
-  <div class="current-weather">
+  <div class="current-weather" v-if="weatherStore.activeCityData">
     <img src="/icons/icn_cloud.svg" class="current-weather__icon" alt="" width="180" height="180" />
-    <b class="current-weather__temp">34°</b>
+    <b class="current-weather__temp">{{ Math.round(weatherStore.activeCityData.main.temp) }}°</b>
     <div class="current-weather__desc">
-      <p>Облачно</p>
-      <p>Влажность: 85%</p>
-      <p>Ветер: 1 м/с</p>
+      <p>{{ weatherStore.activeCityData.weather[0].description }}</p>
+      <p>Влажность: {{ weatherStore.activeCityData.main.humidity }}%</p>
+      <p>Ветер: {{ weatherStore.activeCityData.wind.speed }} м/с</p>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useWeatherStore } from '@/stores/weather'
+
+const weatherStore = useWeatherStore()
+</script>
 
 <style lang="scss" scoped>
 .current-weather {
@@ -48,6 +52,7 @@
     gap: 12px;
     font-size: 24px;
     font-weight: 500;
+
     @media (max-width: $xxl) {
       font-size: 18px;
     }
@@ -57,6 +62,9 @@
     }
     p {
       margin-bottom: 0;
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
   }
 }
