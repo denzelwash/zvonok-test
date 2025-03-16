@@ -3,7 +3,7 @@
     <p class="card-popular__city">{{ props.name }}</p>
     <p class="card-popular__desc">{{ props.description }}</p>
     <img :src="`/icons/${ICONS_MAP[props.icon]}.svg`" class="card-popular__icon" alt="" width="60" height="60" />
-    <b class="card-popular__temp">{{ props.temp }}°</b>
+    <b class="card-popular__temp">{{ Math.round(props.temp) }}°</b>
     <span class="card-popular__humidity">Влажность: {{ props.humidity }}%</span>
   </div>
 </template>
