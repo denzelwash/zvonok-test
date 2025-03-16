@@ -1,15 +1,16 @@
 import { defineStore } from 'pinia'
 import { ref, watch } from 'vue'
-import { City, type CurrentWeatherResponse, type WeatherByHoursResponse } from '@/types/weather'
+import type { CurrentWeatherResponse, WeatherByHoursResponse } from '@/types/weather'
 import { getCurrentWeather, getWeatherByHours } from '@/services/queries'
+import { CITIES } from '@/const'
 
 export const useWeatherStore = defineStore('weather', () => {
-  const activeCity = ref(City.Kazan)
+  const activeCity = ref(CITIES[0])
   const activeCityData = ref<CurrentWeatherResponse>()
   const activeCityDataByHours = ref<WeatherByHoursResponse>()
   const popularCitiesData = ref<CurrentWeatherResponse[]>([])
 
-  const setActiveCity = (city: City) => {
+  const setActiveCity = (city: string) => {
     activeCity.value = city
   }
 

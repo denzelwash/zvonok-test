@@ -13,13 +13,13 @@
 import PageNav from '@/components/PageNav.vue'
 import AppSelect from './UI/AppSelect.vue'
 import { useWeatherStore } from '@/stores/weather'
-import { City } from '@/types/weather'
 import { computed } from 'vue'
+import { CITIES } from '@/const'
 
 const weatherStore = useWeatherStore()
 
 const selectOptions = computed(() => {
-  return Object.values(City).filter((city) => city !== weatherStore.activeCity)
+  return CITIES.filter((city) => city !== weatherStore.activeCity)
 })
 </script>
 

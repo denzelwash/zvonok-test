@@ -1,22 +1,5 @@
 import type { ICONS_MAP } from '@/const'
 
-export enum City {
-  Kazan = 'Казань',
-  Krasnodar = 'Краснодар',
-  Ufa = 'Уфа',
-  Novosibirsk = 'Новосибирск',
-  Krasnoyarsk = 'Красноярск',
-  Moscow = 'Москва',
-}
-
-export enum PopularCity {
-  Moscow = 'Москва',
-  Novosibirsk = 'Новосибирск',
-  Krasnodar = 'Краснодар',
-  Krasnoyarsk = 'Красноярск',
-  Tula = 'Тула',
-}
-
 export interface CurrentWeatherResponse {
   coord: {
     lon: number
@@ -66,7 +49,7 @@ export interface WeatherByHoursResponse {
       '3h': number
     }
   }[]
-  city: City
+  city: string
 }
 
 interface Weather {

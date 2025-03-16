@@ -1,3 +1,7 @@
+const CITIES = ['Казань', 'Краснодар', 'Уфа', 'Новосибирск', 'Красноярск', 'Москва']
+
+const POPULAR_CITIES = ['Москва', 'Новосибирск', 'Краснодар', 'Красноярск', 'Тула']
+
 const ICONS_MAP = {
   '01d': 'icn_sun',
   '01n': 'icn_sun',
@@ -19,4 +23,4 @@ const ICONS_MAP = {
   '50n': 'icn_cloud',
 } as const
 
-export { ICONS_MAP }
+export { CITIES, POPULAR_CITIES, ICONS_MAP }
