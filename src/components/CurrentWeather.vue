@@ -1,6 +1,12 @@
 <template>
   <div class="current-weather" v-if="weatherStore.activeCityData !== undefined">
-    <img src="/icons/icn_cloud.svg" class="current-weather__icon" alt="" width="180" height="180" />
+    <img
+      :src="`/icons/${ICONS_MAP[weatherStore.activeCityData.weather[0].icon]}.svg`"
+      class="current-weather__icon"
+      alt=""
+      width="180"
+      height="180"
+    />
     <b class="current-weather__temp">{{ Math.round(weatherStore.activeCityData.main.temp) }}°</b>
     <div class="current-weather__desc">
       <p>{{ weatherStore.activeCityData.weather[0].description }}</p>
@@ -11,6 +17,7 @@
 </template>
 
 <script setup lang="ts">
+import { ICONS_MAP } from '@/const'
 import { useWeatherStore } from '@/stores/weather'
 
 const weatherStore = useWeatherStore()
