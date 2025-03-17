@@ -25,17 +25,8 @@ const todayWeatherByHours = computed(() => {
     return []
   }
   const today = weatherStore.activeCityDataByHours.list[0].dt_txt.split(' ')[0]
-  let count = 0
   return weatherStore.activeCityDataByHours.list.filter((period) => {
-    const isToday = period.dt_txt.split(' ')[0] === today
-    if (isToday) {
-      return true
-    }
-    if (!isToday && count === 0) {
-      count++
-      return true
-    }
-    return false
+    return period.dt_txt.split(' ')[0] === today
   })
 })
 </script>
