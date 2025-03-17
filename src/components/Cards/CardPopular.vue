@@ -32,8 +32,11 @@ const props = defineProps<{
   background: radial-gradient(134.39% 134.39% at -17.89% -22.86%, rgba(255, 255, 255, 0.2) 0%, rgba(238, 237, 237, 0.1) 100%);
   text-align: center;
   flex-grow: 1;
+  flex-shrink: 0;
+  width: calc(20% - 34px);
   @media (max-width: $xl) {
     padding: 16px 12px;
+    width: calc(20% - 16px);
   }
   @media (max-width: $md) {
     width: calc(50% - 8px);

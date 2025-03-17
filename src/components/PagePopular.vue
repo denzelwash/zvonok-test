@@ -72,8 +72,7 @@ onBeforeMount(async () => {
   }
 }
 .popular-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
   gap: 36px;
   @media (max-width: $xxl) {
     gap: 16px;
@@ -82,7 +81,6 @@ onBeforeMount(async () => {
     gap: 12px;
   }
   @media (max-width: $md) {
-    display: flex;
     flex-wrap: wrap;
   }
 }
