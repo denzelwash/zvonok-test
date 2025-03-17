@@ -11,7 +11,7 @@
     <div class="current-weather__desc">
       <p>{{ weatherStore.activeCityData.weather[0].description }}</p>
       <p>Влажность: {{ weatherStore.activeCityData.main.humidity }}%</p>
-      <p>Ветер: {{ weatherStore.activeCityData.wind.speed }} м/с</p>
+      <p>Ветер: {{ wind }} м/с</p>
     </div>
   </div>
 </template>
@@ -19,8 +19,17 @@
 <script setup lang="ts">
 import { ICONS_MAP } from '@/const'
 import { useWeatherStore } from '@/stores/weather'
+import { computed } from 'vue'
 
 const weatherStore = useWeatherStore()
+
+const wind = computed(() => {
+  if (weatherStore.activeCityData) {
+    const wind = weatherStore.activeCityData.wind.speed
+    return wind % 1 === 0 ? wind : Math.round(wind * 10) / 10
+  }
+  return ''
+})
 </script>
 
 <style lang="scss" scoped>
