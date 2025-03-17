@@ -43,8 +43,10 @@ const time = computed(() => {
   text-align: center;
   border-bottom: 1px solid rgba(233, 233, 243, 0.1);
   justify-content: space-around;
-  @media (max-width: $sm) {
+  @media (max-width: $xl) {
     gap: 4px;
+  }
+  @media (max-width: $sm) {
     justify-content: space-between;
   }
   &__time {
@@ -54,10 +56,12 @@ const time = computed(() => {
     justify-content: center;
     gap: 8px;
     margin-bottom: 0;
+    width: 56px;
     @media (max-width: $xl) {
       font-size: 14px;
     }
-    @media (max-width: $sm) {
+    @media (max-width: $xs) {
+      width: 40px;
       font-size: 12px;
     }
   }
@@ -70,7 +74,7 @@ const time = computed(() => {
       font-size: 32px;
     }
     @media (max-width: $sm) {
-      width: 44px;
+      width: 40px;
       font-size: 18px;
     }
   }
@@ -84,9 +88,8 @@ const time = computed(() => {
       width: 170px;
     }
     @media (max-width: $sm) {
-      width: 110px;
+      width: 104px;
       flex-direction: column;
-      font-size: 12px;
       gap: 4px;
       text-align: center;
     }
@@ -99,19 +102,32 @@ const time = computed(() => {
       @media (max-width: $xl) {
         font-size: 14px;
       }
+      @media (max-width: $sm) {
+        font-size: 12px;
+      }
       &::first-letter {
         text-transform: uppercase;
       }
     }
   }
   &__wind {
+    width: 60px;
     @media (max-width: $xl) {
       font-size: 14px;
     }
+    @media (max-width: $xs) {
+      width: 50px;
+      font-size: 12px;
+    }
   }
   &__humidity {
+    width: 52px;
     @media (max-width: $xl) {
       font-size: 14px;
+    }
+    @media (max-width: $xs) {
+      width: 42px;
+      font-size: 12px;
     }
   }
 }

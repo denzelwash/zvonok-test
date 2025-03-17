@@ -44,6 +44,7 @@ const wind = computed(() => {
     gap: 16px;
   }
   &__icon {
+    flex-shrink: 0;
     @media (max-width: $xxl) {
       width: 120px;
     }
