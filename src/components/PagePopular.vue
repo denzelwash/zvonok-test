@@ -78,6 +78,9 @@ onBeforeMount(async () => {
   @media (max-width: $xxl) {
     gap: 16px;
   }
+  @media (max-width: $lg) {
+    gap: 12px;
+  }
   @media (max-width: $md) {
     display: flex;
     flex-wrap: wrap;

@@ -32,8 +32,8 @@ const props = defineProps<{
   background: radial-gradient(134.39% 134.39% at -17.89% -22.86%, rgba(255, 255, 255, 0.2) 0%, rgba(238, 237, 237, 0.1) 100%);
   text-align: center;
   flex-grow: 1;
-  @media (max-width: $lg) {
-    padding: 16px;
+  @media (max-width: $xl) {
+    padding: 16px 12px;
   }
   @media (max-width: $md) {
     width: calc(50% - 8px);
@@ -51,17 +51,20 @@ const props = defineProps<{
     @media (max-width: $xl) {
       font-size: 18px;
     }
-    @media (max-width: $sm) {
+    @media (max-width: $lg) {
       font-size: 16px;
     }
   }
   &__desc {
-    margin: 8px 0 16px;
+    margin: 0 0 16px;
+    &::first-letter {
+      text-transform: uppercase;
+    }
     @media (max-width: $xl) {
       font-size: 16px;
     }
-    @media (max-width: $sm) {
-      font-size: 14px;
+    @media (max-width: $lg) {
+      font-size: 12px;
     }
   }
   &__icon {
@@ -87,7 +90,7 @@ const props = defineProps<{
     font-weight: 500;
     margin-bottom: 0;
     @media (max-width: $xl) {
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 }
